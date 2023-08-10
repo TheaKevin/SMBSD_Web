@@ -44,7 +44,7 @@
     <body>
         <div class="page">
             <nav id="colorlib-main-nav" role="navigation">
-                <a href="{{ route('home') }}" class="js-colorlib-nav-toggle colorlib-nav-toggle active"></a>
+                <a href="{{ route('home') }}" class="js-colorlib-nav-toggle colorlib-nav-toggle active"><i></i></a>
 
                 <div class="js-fullheight colorlib-table">
                     <div class="img" style="background-image: url(images/bg_3.jpg);"></div>
@@ -109,7 +109,7 @@
                             <a class="colorlib-logo" href="{{ route('home') }}">Company Logo</a>
                         </div>
 
-                        <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"></a>
+                        <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
                     </div>
                 </header>
             
