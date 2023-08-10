@@ -23,6 +23,10 @@
         </script>
 
         <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
+        <script src="{{ asset('js/jquery.min.js') }}" defer></script>
+        <script src="{{ asset('js/popper.js') }}" defer></script>
+        <script src="{{ asset('js/main.js') }}" defer></script>
 
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -32,99 +36,95 @@
         <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 
         <!-- Styles -->
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
         <link href="{{ asset('css/curhat.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
         {{-- <link href="{{ asset('storage/asset/IKukku.png') }}" rel="icon"> --}}
     </head>
     <body>
-        <div id="app">
-            <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-                <div class="container">
-                    
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+        <div class="page">
+            <nav id="colorlib-main-nav" role="navigation">
+                <a href="{{ route('home') }}" class="js-colorlib-nav-toggle colorlib-nav-toggle active"></a>
 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <!-- Left Side Of Navbar -->
-                        <ul class="navbar-nav me-auto">
-                            <li class="nav-item dropdown MenuDropDown" style="margin-right: 20px;">
-                                <a id="navbarDropdown"
-                                    class="nav-link navbar-toggler-icon"
-                                    href="#"
-                                    role="button"
-                                    data-bs-toggle="dropdown"
-                                    aria-haspopup="true"
-                                    aria-expanded="false"
-                                    v-pre> </a>
-                                <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
-                                    {{-- <a href="{{ url('/') }}">
-                                        <img class="img-fluid" src="{{asset('storage/asset/IKukkuLogo.jpg')}}">
-                                    </a> --}}
+                <div class="js-fullheight colorlib-table">
+                    <div class="img" style="background-image: url(images/bg_3.jpg);"></div>
+                    <div class="colorlib-table-cell js-fullheight">
+                        <div class="row no-gutters">
+                            <div class="col-md-12 text-center">
+                                <h1 class="mb-4">
+                                    <a href="{{ route('home') }}" class="logo">Company Logo</a>
+                                </h1>
 
-                                    <a class="dropdown-item" {{-- href="{{ route('TulisCurhat') }}" --}}>+ Tulis Curhat</a>
+                                <ul>
+                                    <li class="active">
+                                        <a href="{{ route('home') }}"><span>Home</span></a>
+                                    </li>
 
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="navbar-brand mb-0 h1" href="{{ url('/') }}" style="color: #ff6f3d;margin-top: -5px;">
-                                    <b>
-                                        Curhatku
-                                    </b>
-                                </a>
-                            </li>
-                        </ul>
+                                    <li>
+                                        <a href="about.html"><span>About</span></a>
+                                    </li>
 
-                        <!-- Right Side Of Navbar -->
-                        <ul class="navbar-nav ms-auto">
-                            {{-- <div class="container-fluid" style="margin-top: 10px;">
-                                <form action="/search" method="GET" class="d-flex">
-                                    <input class="form-control me-2"
-                                        type="text"
-                                        name="search"
-                                        placeholder="Search"
-                                        aria-label="Search">
-                                    <button class="btn btn-outline-secondary" type="submit">Search</button>
-                                </form>
-                            </div> --}}
+                                    <li>
+                                        <a href="blog.html"><span>Blog</span></a>
+                                    </li>
 
-                            <!-- Authentication Links -->
-                            @guest
-                                <li class="nav-item" style="margin-top: 10px;">
-                                    <a class="nav-link"
-                                        style="cursor: pointer"
-                                        data-bs-toggle="modal"
-                                        data-bs-target="#loginModal">{{ __('Login') }}</a>
-                                </li>
-                            @else
-                                <li class="nav-item dropdown" style="margin-top: 10px;">
+                                    <li>
+                                        <a href="contact.html"><span>Contact</span></a>
+                                    </li>
+                                                
+                                    <!-- Authentication Links -->
+                                    @guest
+                                        <li class="nav-item" style="margin-top: 10px;">
+                                            <a class="nav-link"
+                                                style="cursor: pointer"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#loginModal">{{ __('Login') }}</a>
+                                        </li>
+                                    @else
+                                        <li class="nav-item dropdown" style="margin-top: 10px;">
+                                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                                {{ Auth::user()->name }}
+                                            </a>
 
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        {{ Auth::user()->name }}
-                                    </a>
-
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-
-                                        <a class="dropdown-item" {{-- href="{{ route('Profile') }}" --}}>Profile</a>
-
-                                        {{-- <a class="dropdown-item"
-                                            data-bs-toggle="modal"
-                                            data-bs-target="#gantiPassword">Ganti Password</a> --}}
-                                        
-                                        <a class="dropdown-item" {{-- href="{{ route('logout') }}"--}}>Logout</a>
-
-                                    </div>
-                                </li>
-
-                            @endguest
-                        </ul>
+                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                                <a class="dropdown-item" {{-- href="{{ route('Profile') }}" --}}>Profile</a>
+                                                {{-- <a class="dropdown-item"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#gantiPassword">Ganti Password</a> --}}
+                                                <a class="dropdown-item" {{-- href="{{ route('logout') }}"--}}>Logout</a>
+                                            </div>
+                                        </li>
+                                    @endguest
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </nav>
+            
+            <div id="colorlib-page">
+                <header>
+                    <div class="container">
+                        <div class="colorlib-navbar-brand">
+                            <a class="colorlib-logo" href="{{ route('home') }}">Company Logo</a>
+                        </div>
 
-            <main class="py-4">
-                @yield('content')
-            </main>
+                        <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"></a>
+                    </div>
+                </header>
+            
+                <section class="hero-wrap js-fullheight">
+                    <div class="container px-0">
+                        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
+                            <div class="col-md-12 ftco-animate text-center">
+                                <div class="desc">
+                                    @yield('content')
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
         @yield('scripts')
     </body>
