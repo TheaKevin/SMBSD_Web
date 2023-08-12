@@ -19,3 +19,4 @@ Route::get('/', function () {
 })->name('home');
 
 Route::post('/login/load', [LoginController::class, 'authenticate'])->name('login');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
