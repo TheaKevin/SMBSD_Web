@@ -22,12 +22,6 @@
             }
         </script>
 
-        <script src="{{ asset('js/app.js') }}" defer></script>
-        <script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
-        <script src="{{ asset('js/jquery.min.js') }}" defer></script>
-        <script src="{{ asset('js/popper.js') }}" defer></script>
-        <script src="{{ asset('js/main.js') }}" defer></script>
-
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -37,110 +31,136 @@
 
         <!-- Styles -->
         <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
         <link href="{{ asset('css/curhat.css') }}" rel="stylesheet">
         <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
         {{-- <link href="{{ asset('storage/asset/IKukku.png') }}" rel="icon"> --}}
     </head>
-    <body>
-        <div class="page">
-            <nav id="colorlib-main-nav" role="navigation">
-                <a href="{{ route('home') }}" class="js-colorlib-nav-toggle colorlib-nav-toggle active"><i></i></a>
+    <body class="bg-light">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: #e3f2fd;" aria-label="Main navigation">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img class="img-fluid" src="{{asset('storage/logo.png')}}" style="height: 50px;">
+                </a>
 
-                <div class="js-fullheight colorlib-table">
-                    <div class="img" style="background-image: url(images/bg_3.jpg);"></div>
-                    <div class="colorlib-table-cell js-fullheight">
-                        <div class="row no-gutters">
-                            <div class="col-md-12 text-center">
-                                <h1 class="mb-4">
-                                    <a href="{{ route('home') }}" class="logo">Company Logo</a>
-                                </h1>
+                <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
 
-                                <ul>
-                                    <li class="active">
-                                        <a href="{{ route('home') }}"><span>Home</span></a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Activity</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Donation</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Gallery</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">More</a>
+
+                            <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                                <li>
+                                    <a class="dropdown-item" href="#">Action</a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        @guest
+                            <li class="nav-item dropdown">
+                                <a class="nav-link"
+                                    style="cursor: pointer"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#loginModal">{{ __('Login') }}</a>
+                            </li>
+                        @else
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-bs-toggle="dropdown" aria-expanded="false">{{ Auth::user()->fullName }}</a>
+
+                                <ul class="dropdown-menu" aria-labelledby="dropdown02">
+                                    <li>
+                                        <a class="dropdown-item" href="#">Profile</a>
                                     </li>
 
                                     <li>
-                                        <a href="about.html"><span>About</span></a>
+                                        <a class="dropdown-item" href="#">Logout</a>
                                     </li>
-
-                                    <li>
-                                        <a href="blog.html"><span>Blog</span></a>
-                                    </li>
-
-                                    <li>
-                                        <a href="contact.html"><span>Contact</span></a>
-                                    </li>
-                                                
-                                    <!-- Authentication Links -->
-                                    @guest
-                                        <li class="nav-item" style="margin-top: 10px;">
-                                            <a class="nav-link"
-                                                style="cursor: pointer"
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#loginModal">{{ __('Login') }}</a>
-                                        </li>
-                                    @else
-                                        <li class="nav-item dropdown" style="margin-top: 10px;">
-                                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                                {{ Auth::user()->name }}
-                                            </a>
-
-                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                                <a class="dropdown-item" {{-- href="{{ route('Profile') }}" --}}>Profile</a>
-                                                {{-- <a class="dropdown-item"
-                                                    data-bs-toggle="modal"
-                                                    data-bs-target="#gantiPassword">Ganti Password</a> --}}
-                                                <a class="dropdown-item" {{-- href="{{ route('logout') }}"--}}>Logout</a>
-                                            </div>
-                                        </li>
-                                    @endguest
                                 </ul>
-                            </div>
-                        </div>
-                    </div>
+                            </li>
+                        @endguest
+                    </ul>
                 </div>
-            </nav>
-            
-            <div id="colorlib-page">
-                <header>
-                    <div class="container">
-                        <div class="colorlib-navbar-brand">
-                            <a class="colorlib-logo" href="{{ route('home') }}">Company Logo</a>
-                        </div>
-
-                        <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
-                    </div>
-                </header>
-            
-                <section class="hero-wrap js-fullheight">
-                    <div class="container px-0">
-                        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
-                            <div class="col-md-12 ftco-animate text-center">
-                                <div class="desc">
-                                    @yield('content')
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
             </div>
-        </div>
+        </nav>
+        
+        {{-- <div class="nav-scroller bg-body shadow-sm">
+            <nav class="nav nav-underline" aria-label="Secondary navigation">
+                <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                <a class="nav-link" href="#">
+                    Friends
+                    <span class="badge bg-light text-dark rounded-pill align-text-bottom">27</span>
+                </a>
+                <a class="nav-link" href="#">Explore</a>
+                <a class="nav-link" href="#">Suggestions</a>
+                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#">Link</a>
+            </nav>
+        </div> --}}
+
+        <main class="container mt-3">
+            @yield('content')
+        </main>
+
         @yield('scripts')
+
+        <script src="{{ asset('js/navbar.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.bundle.min.js') }}" defer></script>
     </body>
 </html>
 
 <style>
-
-    @media only screen and (max-width: 800px) {
-        .MenuDropDown{
-            visibility: hidden;
-        }
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
     }
 
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
 </style>
 
-{{-- @guest
+@guest
     @include('partials.login')
-    @include('partials.register')
-@endguest --}}
+    {{-- @include('partials.register') --}}
+@endguest

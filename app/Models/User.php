@@ -43,6 +43,11 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    public function findByLoginID($loginID)
+    {
+        return $this->where('loginID', $loginID)->first();
+    }
+
     public function userDetail()
     {
         return $this->hasOne(userDetail::class);
