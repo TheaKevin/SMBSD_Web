@@ -19,6 +19,10 @@
                 $(window).on('load', function() {
                     $('#loginModal').modal('show');
                 });
+            }else if(urlParams.has('role')){
+                $(window).on('load', function() {
+                    $('#noAccess').modal('show');
+                });
             }
         </script>
 
@@ -39,7 +43,7 @@
     <body class="bg-light">
         <nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: #e3f2fd;" aria-label="Main navigation">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="{{ route('home') }}">
                     <img class="img-fluid" src="{{asset('storage/logo.png')}}" style="height: 50px;">
                 </a>
 
@@ -50,7 +54,7 @@
                 <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
                         </li>
 
                         <li class="nav-item">
@@ -69,23 +73,61 @@
                             <a class="nav-link" href="#">Gallery</a>
                         </li>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">More</a>
-
-                            <ul class="dropdown-menu" aria-labelledby="dropdown01">
-                                <li>
-                                    <a class="dropdown-item" href="#">Action</a>
+                        @auth
+                            @if (Auth::user()->role == 'member')
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">More</a>
+        
+                                    <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                                        <li>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                        </li>
+        
+                                        <li>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                        </li>
+        
+                                        <li>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </li>
+                                    </ul>
                                 </li>
+                            @elseif (Auth::user()->role == 'admin' || Auth::user()->role == 'super admin')
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Admin</a>
+        
+                                    <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                                        <li>
+                                            <a class="dropdown-item" href="{{ route('addUserView') }}">Tambah user</a>
+                                        </li>
+        
+                                        <li>
+                                            <a class="dropdown-item" href="#">Absen</a>
+                                        </li>
+        
+                                        <li>
+                                            <a class="dropdown-item" href="#">Tambah Etalase Hadiah</a>
+                                        </li>
 
-                                <li>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">Update Progress Siswa</a>
+                                        </li>
 
-                                <li>
-                                    <a class="dropdown-item" href="#">Something else here</a>
+                                        <li>
+                                            <a class="dropdown-item" href="#">Update Kegiatan</a>
+                                        </li>
+
+                                        @if((Auth::user()->role == 'super admin'))
+                                        <hr>
+
+                                        <li>
+                                            <a class="dropdown-item" href="#">Tambah admin</a>
+                                        </li>
+                                        @endif
+                                    </ul>
                                 </li>
-                            </ul>
-                        </li>
+                            @endif
+                        @endauth
                     </ul>
 
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -163,4 +205,6 @@
 @guest
     @include('partials.login')
     {{-- @include('partials.register') --}}
+@else
+    @include('partials.noAccess')
 @endguest

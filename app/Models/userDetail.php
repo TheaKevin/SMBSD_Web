@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class userDetail extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'user_id', 'nickname', 'gender', 'address', 'dob', 'classSMBSD',
+        'classSchool', 'schoolName', 'hobby', 'hope', 'ekskul'
+    ];
     
     public function user()
     {

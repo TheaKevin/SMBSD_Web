@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,5 @@ Route::get('/', function () {
 
 Route::post('/login/load', [LoginController::class, 'authenticate'])->name('login');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
+Route::get('/addUser', [UserController::class, 'addUserView'])->name('addUserView')->middleware('auth');
+Route::post('/addUser/process', [UserController::class, 'addUserProcess'])->name('addUserProcess')->middleware('auth');
