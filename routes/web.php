@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\SuperAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,5 +23,9 @@ Route::get('/', function () {
 
 Route::post('/login/load', [LoginController::class, 'authenticate'])->name('login');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
-Route::get('/addUser', [UserController::class, 'addUserView'])->name('addUserView')->middleware('auth');
-Route::post('/addUser/process', [UserController::class, 'addUserProcess'])->name('addUserProcess')->middleware('auth');
+
+Route::get('/addUser', [AdminController::class, 'addUserView'])->name('addUserView')->middleware('auth', 'admin');
+Route::post('/addUser/process', [AdminController::class, 'addUserProcess'])->name('addUserProcess')->middleware('auth', 'admin');
+
+Route::get('/addAdmin', [SuperAdminController::class, 'addAdminView'])->name('addAdminView')->middleware('auth', 'superAdmin');
+Route::post('/addAdmin/process', [SuperAdminController::class, 'addAdminProcess'])->name('addAdminProcess')->middleware('auth', 'superAdmin');
