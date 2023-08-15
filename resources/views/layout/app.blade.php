@@ -123,6 +123,10 @@
                                         <li>
                                             <a class="dropdown-item" href="{{ route('addAdminView') }}">Tambah admin</a>
                                         </li>
+
+                                        <li>
+                                            <a class="dropdown-item" href="{{ route('deleteAdminView') }}">Hapus admin</a>
+                                        </li>
                                         @endif
                                     </ul>
                                 </li>

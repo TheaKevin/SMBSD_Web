@@ -19,8 +19,7 @@ class adminController extends Controller
             'loginID' => 'required|string|max:255|unique:users',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8',
-            'fullName' => 'required|string|max:255',
-            'dob' => 'required|date'
+            'fullName' => 'required|string|max:255'
         ]);
 
         $user = User::create($validatedData);

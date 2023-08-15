@@ -54,16 +54,6 @@ class User extends Authenticatable
         return $this->hasOne(userDetail::class);
     }
 
-    public function userParent()
-    {
-        return $this->hasOne(parentChild::class, 'child_id');
-    }
-
-    public function userChild()
-    {
-        return $this->hasOne(parentChild::class, 'parent_id');
-    }
-
     public function absents()
     {
         return $this->hasMany(absents::class);
@@ -72,5 +62,15 @@ class User extends Authenticatable
     public function childProgress()
     {
         return $this->hasMany(childProgresss::class);
+    }
+
+    public function parent()
+    {
+        return $this->belongsTo(User::class, 'parent_id');
+    }
+
+    public function children()
+    {
+        return $this->hasMany(User::class, 'parent_id');
     }
 }
