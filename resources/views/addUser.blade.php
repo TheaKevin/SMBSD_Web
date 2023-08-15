@@ -117,6 +117,14 @@
                             <input id="ekskul" type="text" class="form-control" name="ekskul" value="{{ old('ekskul') }}">
                         </div>
 
+                        <div class="form-group">
+                            <label for="role">{{ __('Role') }}</label>
+                            <select id="role" class="form-control" name="role">
+                                <option value="member" selected>Member</option>
+                                <option value="parent">Orang tua</option>
+                            </select>
+                        </div>
+
                         <button type="submit" class="btn btn-primary">
                             {{ __('Add User') }}
                         </button>
