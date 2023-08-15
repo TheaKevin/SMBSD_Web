@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->string('nickname')->nullable();
             $table->string('gender')->default('male');
-            $table->date('dob')->nullable();
+            $table->date('dob');
             $table->integer('age')->nullable();
             $table->string('address')->nullable();
             $table->string('classSMBSD')->nullable();

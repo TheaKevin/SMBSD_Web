@@ -79,7 +79,12 @@
 
                         <div class="form-group">
                             <label for="dob">{{ __('Tanggal Lahir') }}</label>
-                            <input id="dob" type="date" class="form-control" name="dob" value="{{ old('dob') }}">
+                            <input id="dob" type="date" class="form-control" name="dob" value="{{ old('dob') }}" required>
+                            @error('dob')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
 
                         <div class="form-group">
