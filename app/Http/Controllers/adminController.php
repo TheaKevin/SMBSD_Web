@@ -20,7 +20,7 @@ class adminController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8',
             'fullName' => 'required|string|max:255',
-            'role' => 'required|string',
+            'role' => 'required|string'
         ]);
 
         $user = User::create($validatedData);

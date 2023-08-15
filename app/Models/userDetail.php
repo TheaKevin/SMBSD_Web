@@ -12,7 +12,7 @@ class userDetail extends Model
 
     protected $fillable = [
         'user_id', 'nickname', 'gender', 'address', 'dob', 'classSMBSD',
-        'classSchool', 'schoolName', 'hobby', 'hope', 'ekskul'
+        'classSchool', 'schoolName', 'hobby', 'hope', 'ekskul', 'point'
     ];
     
     public function user()

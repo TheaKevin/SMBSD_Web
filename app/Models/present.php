@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class present extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'presentImage', 'presentName', 'presentPoints'
+    ];
 }
