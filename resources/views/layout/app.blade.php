@@ -100,6 +100,10 @@
                                         <li>
                                             <a class="dropdown-item" href="{{ route('addUserView') }}">Tambah user</a>
                                         </li>
+
+                                        <li>
+                                            <a class="dropdown-item" href="{{ route('addParentView') }}">Tambah parent</a>
+                                        </li>
         
                                         <li>
                                             <a class="dropdown-item" href="#">Absen</a>

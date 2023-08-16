@@ -125,7 +125,7 @@
                             </select>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-primary mt-3">
                             {{ __('Add User') }}
                         </button>
                     </form>

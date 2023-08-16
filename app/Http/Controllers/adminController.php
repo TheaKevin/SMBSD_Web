@@ -36,4 +36,24 @@ class adminController extends Controller
 
         return redirect()->route('addUserView');
     }
+
+    public function addParentView()
+    {
+        $members = User::where('role', 'member')
+            ->whereNull('parent_id')
+            ->get();
+
+        $parents = User::where('role', 'parent')->get();
+
+        return view('addParent', compact('members', 'parents'));
+    }
+
+    public function addParentProcess(Request $request)
+    {
+        User::where('id', $request->child)->update(['parent_id' => $request->parent]);
+
+        session()->flash('success', 'Orang tua berhasil ditambahkan.');
+
+        return redirect()->route('addParentView');
+    }
 }

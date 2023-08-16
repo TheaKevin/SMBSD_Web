@@ -27,6 +27,9 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout')->middl
 Route::get('/addUser', [AdminController::class, 'addUserView'])->name('addUserView')->middleware('auth', 'admin');
 Route::post('/addUser/process', [AdminController::class, 'addUserProcess'])->name('addUserProcess')->middleware('auth', 'admin');
 
+Route::get('/addParent', [AdminController::class, 'addParentView'])->name('addParentView')->middleware('auth', 'admin');
+Route::post('/addParent/process', [AdminController::class, 'addParentProcess'])->name('addParentProcess')->middleware('auth', 'admin');
+
 Route::get('/addAdmin', [SuperAdminController::class, 'addAdminView'])->name('addAdminView')->middleware('auth', 'superAdmin');
 Route::post('/addAdmin/process', [SuperAdminController::class, 'addAdminProcess'])->name('addAdminProcess')->middleware('auth', 'superAdmin');
 Route::get('/deleteAdmin', [SuperAdminController::class, 'deleteAdminView'])->name('deleteAdminView')->middleware('auth', 'superAdmin');
