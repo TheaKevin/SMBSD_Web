@@ -98,11 +98,11 @@
         
                                     <ul class="dropdown-menu" aria-labelledby="dropdown01">
                                         <li>
-                                            <a class="dropdown-item" href="{{ route('addUserView') }}">Tambah user</a>
+                                            <a class="dropdown-item" href="{{ route('addUserView') }}">Tambah Pengguna</a>
                                         </li>
 
                                         <li>
-                                            <a class="dropdown-item" href="{{ route('addParentView') }}">Tambah parent</a>
+                                            <a class="dropdown-item" href="{{ route('addParentView') }}">Tambah Orang Tua</a>
                                         </li>
         
                                         <li>
@@ -114,7 +114,7 @@
                                         </li>
 
                                         <li>
-                                            <a class="dropdown-item" href="#">Update Progress Siswa</a>
+                                            <a class="dropdown-item" href="{{ route('updateProgressView') }}">Update Progress Siswa</a>
                                         </li>
 
                                         <li>

@@ -30,6 +30,9 @@ Route::post('/addUser/process', [AdminController::class, 'addUserProcess'])->nam
 Route::get('/addParent', [AdminController::class, 'addParentView'])->name('addParentView')->middleware('auth', 'admin');
 Route::post('/addParent/process', [AdminController::class, 'addParentProcess'])->name('addParentProcess')->middleware('auth', 'admin');
 
+Route::get('/updateProgress', [AdminController::class, 'updateProgressView'])->name('updateProgressView')->middleware('auth', 'admin');
+Route::post('/updateProgress/process', [AdminController::class, 'updateProgressProcess'])->name('updateProgressProcess')->middleware('auth', 'admin');
+
 Route::get('/addAdmin', [SuperAdminController::class, 'addAdminView'])->name('addAdminView')->middleware('auth', 'superAdmin');
 Route::post('/addAdmin/process', [SuperAdminController::class, 'addAdminProcess'])->name('addAdminProcess')->middleware('auth', 'superAdmin');
 Route::get('/deleteAdmin', [SuperAdminController::class, 'deleteAdminView'])->name('deleteAdminView')->middleware('auth', 'superAdmin');

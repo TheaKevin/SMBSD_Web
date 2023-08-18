@@ -63,7 +63,7 @@ class User extends Authenticatable
 
     public function childProgress()
     {
-        return $this->hasMany(childProgresss::class);
+        return $this->hasMany(childProgress::class);
     }
 
     public function parent()
