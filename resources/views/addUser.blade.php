@@ -89,7 +89,12 @@
 
                         <div class="form-group">
                             <label for="classSMBSD">{{ __('Kelas SMB') }}</label>
-                            <input id="classSMBSD" type="text" class="form-control" name="classSMBSD" value="{{ old('classSMBSD') }}">
+                            <select id="classSMBSD" class="form-control" name="classSMBSD">
+                                <option value="A" selected>A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="BYU">BYU</option>
+                            </select>
                         </div>
 
                         <div class="form-group">
