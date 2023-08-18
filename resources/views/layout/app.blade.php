@@ -106,7 +106,7 @@
                                         </li>
         
                                         <li>
-                                            <a class="dropdown-item" href="#">Absen</a>
+                                            <a class="dropdown-item" href="{{ route('absentView') }}">Absen</a>
                                         </li>
         
                                         <li>

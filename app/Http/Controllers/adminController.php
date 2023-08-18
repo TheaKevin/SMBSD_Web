@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Models\User;
 use App\Models\UserDetail;
+use App\Models\Absent;
 use App\Models\ChildProgress;
 
 class adminController extends Controller
@@ -85,5 +86,52 @@ class adminController extends Controller
         session()->flash('success', 'Progress siswa berhasil disimpan.');
 
         return redirect()->route('updateProgressView');
+    }
+
+    public function absentView()
+    {
+        Carbon::setWeekStartsAt(Carbon::SUNDAY);
+        Carbon::setWeekEndsAt(Carbon::SATURDAY);
+
+        $startOfWeek = Carbon::now()->startOfWeek()->format('Y-m-d');
+        $endOfWeek = Carbon::now()->endOfWeek()->format('Y-m-d');
+
+        $users = User::where('role', 'member')
+            ->whereDoesntHave('absent', function ($query) use ($startOfWeek, $endOfWeek) {
+                $query->whereBetween('absentDate', [$startOfWeek, $endOfWeek]);
+            })
+            ->with('userDetail')
+            ->get();
+
+        return view('absent', compact('users'));
+    }
+
+    public function absentProcess(Request $request){
+        $selectedUserIds = $request->input('selected_users', []);
+        $userIds = $request->input('selected_users');
+        $absentDate = Carbon::today();
+
+        if (!empty($selectedUserIds)) {
+            foreach ($userIds as $userId) {
+                Absent::create([
+                    'user_id' => $userId,
+                    'absentDate' => $absentDate,
+                ]);
+
+                // Update points in userDetails
+                $userDetail = UserDetail::where('user_id', $userId)->first();
+                if ($userDetail) {
+                    $userDetail->increment('point');
+                }
+            }
+            
+            session()->flash('success', 'Data absen berhasil disimpan.');
+
+            return redirect()->route('absentView');
+        }
+
+        session()->flash('error', 'Tidak ada user yang dipilih.');
+
+        return redirect()->route('absentView');
     }
 }

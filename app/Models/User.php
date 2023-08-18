@@ -56,9 +56,9 @@ class User extends Authenticatable
         return $this->hasOne(userDetail::class);
     }
 
-    public function absents()
+    public function absent()
     {
-        return $this->hasMany(absents::class);
+        return $this->hasMany(absent::class);
     }
 
     public function childProgress()
