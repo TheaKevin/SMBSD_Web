@@ -1,0 +1,368 @@
+.title{
+	margin: 20px auto;
+	padding: 0 25px;
+}
+.title h1{
+	margin-left: 50%;
+	transform: translate(-50%);
+	padding: 20px 15px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+/*Filosofi*/
+
+.subTitle-about{
+	background-color: none;
+	color: #000;
+	margin: 0 15%;
+	padding: 15px 0;
+	text-align: center;
+	text-transform: uppercase;
+	box-shadow: 0 20px 40px rgba(0,0,0,.2);
+	border: 4px solid #000;
+	border-radius: 15px;
+}
+.image-size{
+	max-width: 70%;
+	margin-left: 50%;
+	transform: translateX(-50%);
+	border: 4px solid #000;
+	border-radius: 15px;
+}
+.text{
+	display: flex;
+	flex-direction: column;
+	text-align: justify;
+	list-style: none;
+	font-size: 22px;
+
+}
+.text li{
+	padding: 10px 0;
+	font-size: 40px;
+	font-variant: small-caps;
+	font-family: "Cooper Black";
+	text-align: center;
+	font-weight: bolder;
+}
+
+/*Visi, Misi, Value*/
+
+.section-card{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+}
+.wrapper-about{
+	display: flex;
+	margin: 26px auto;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	justify-content: center;
+}
+.collapsible-1{
+	max-width: 100%;
+	overflow: hidden;
+	font-weight: 500;
+	text-align: center;
+	text-transform: uppercase;
+}
+.collapsible-1 input{
+	display: none;
+}
+.collapsible-1 label{
+	position: relative;
+	font-weight: 600;
+	background: #000;
+	box-shadow: 0 20px 40px rgba(0,0,0,.2);
+	color: #fff;
+	display: block;
+	margin-bottom: 10px;
+	cursor: pointer;
+	padding: 15px;
+	border-radius: 15px;
+	z-index: 1;
+}
+.collapsible-text-1{
+	max-height: 1px;
+	overflow: hidden;
+	border-radius: 15px;
+	line-height: 1.1;
+	position: relative;
+	top: -100%;
+	opacity: 0.5;
+	transition: all 0.3s ease;
+}
+.collapsible-1 input:checked ~ .collapsible-text-1{
+	max-height: 500px;
+	padding-bottom: 5px;
+	background: #fff;
+	box-shadow: 0 20px 40px rgba(0,0,0,.2);
+	opacity: 1;
+	top: 0;
+}
+.collapsible-text-1 h3{
+	margin-top: 5px;
+	padding: 5px 5px;
+	color: #000;
+	text-transform: uppercase;
+	text-align: center;
+}
+.collapsible-text-1 p{
+	padding: 5px 10px;
+	font-size: 15px;
+	text-transform: lowercase;
+	text-align: center;
+}
+.collapsible-2{
+	max-width: 100%;
+	overflow: hidden;
+	font-weight: 500;
+	text-align: center;
+	text-transform: uppercase;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+.collapsible-2 input{
+	display: none;
+}
+.collapsible-2 label{
+	position: relative;
+	font-weight: 600;
+	background: #000;
+	box-shadow: 0 20px 40px rgba(0,0,0,.2);
+	color: #fff;
+	display: block;
+	margin-bottom: 10px;
+	cursor: pointer;
+	padding: 15px;
+	border-radius: 15px;
+	z-index: 1;
+}
+.collapsible-text-2{
+	max-height: 1px;
+	overflow: hidden;
+	border-radius: 15px;
+	line-height: 1.1;
+	position: relative;
+	top: -100%;
+	opacity: 0.5;
+	transition: all 0.3s ease;
+}
+.collapsible-2 input:checked ~ .collapsible-text-2{
+	max-height: 500px;
+	padding-bottom: 5px;
+	background: #fff;
+	box-shadow: 0 20px 40px rgba(0,0,0,.2);
+	opacity: 1;
+	top: 0;
+}
+.collapsible-text-2 h3{
+	margin-top: 5px;
+	padding: 5px 5px;
+	color: #000;
+	text-transform: uppercase;
+	text-align: center;
+}
+.collapsible-text-2 p{
+	padding: 5px 10px;
+	font-size: 15px;
+	text-transform: lowercase;
+	text-align: center;
+}
+.collapsible-3{
+	max-width: 100%;
+	overflow: hidden;
+	font-weight: 500;
+	text-align: center;
+	text-transform: uppercase;
+}
+.collapsible-3 input{
+	display: none;
+}
+.collapsible-3 label{
+	position: relative;
+	font-weight: 600;
+	background: #000;
+	box-shadow: 0 20px 40px rgba(0,0,0,.2);
+	color: #fff;
+	display: block;
+	margin-bottom: 10px;
+	cursor: pointer;
+	padding: 15px;
+	border-radius: 15px;
+	z-index: 1;
+}
+.collapsible-text-3{
+	max-height: 1px;
+	overflow: hidden;
+	border-radius: 15px;
+	line-height: 1.1;
+	position: relative;
+	top: -100%;
+	opacity: 0.5;
+	transition: all 0.3s ease;
+}
+.collapsible-3 input:checked ~ .collapsible-text-3{
+	max-height: 500px;
+	padding-bottom: 5px;
+	background: #fff;
+	box-shadow: 0 20px 40px rgba(0,0,0,.2);
+	opacity: 1;
+	top: 0;
+}
+.collapsible-text-3 h3{
+	margin-top: 5px;
+	padding: 5px 5px;
+	color: #000;
+	text-transform: uppercase;
+	text-align: center;
+}
+.collapsible-text-3 table{
+	margin: 10px auto;
+	padding: 15px 10px;
+	font-size: 12px;
+}
+.collapsible-text-3 td{
+	text-transform: lowercase;
+	font-size: 14px;
+	padding: 10px 5px;
+}
+.collapsible-text-3 th{
+	padding: 10px 5px;
+	color: #fff;
+	background-color: #000;
+}
+
+/*Kelas*/
+
+.section-kelas{
+	margin: 5px auto;
+	padding: 15px 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	max-width: 100%;
+	text-transform: uppercase;
+}
+.kelas{
+	background-color: none;
+	box-shadow: 0 20px 40px rgba(0,0,0,.2);
+	display: inline-block;
+	border: 5px solid #000;
+	border-radius: 15px;
+	cursor: pointer;
+	transition: color 0.3s linear;
+	position: relative;
+	transition: all 0.3s ease;
+}
+.kelas h3{
+	margin: 5px;
+	padding: 10px 0;
+	font-size: 14px;
+	text-transform: uppercase;
+	text-align: center;
+}
+.kelas p{
+	text-transform: uppercase;
+	margin-bottom: 10px;
+	text-align: center;
+}
+.kelas:hover{
+	color: #fff;
+}
+.kelas:before{
+	content:"";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	z-index: -1;
+	border-radius: 5px;
+	transition: transform 0.5s;
+	transform-origin: 0 0;
+	transition-timing-function: cubic bezier(0.5,1.8,0.5,0.7);
+}
+.kelas::before{
+	transform: scaleY(0);
+}
+.kelas:hover::before{
+	transform: scaleY(1);
+}
+.subSection-kelas{
+	width: 50%;
+}
+.kelas1{
+	width: 45%;
+}
+.kelas2{
+	width: 45%;
+}
+.kelas3{
+	width: 45%;
+}
+.kelas4{
+	width: 45%;
+}
+
+@media (max-width: 991px) {
+	.section-card{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.wrapper-about{
+		display: flex;
+		margin: 0px;
+		padding-top: 10px;
+		padding-bottom: 20px;
+		justify-content: center;
+	}
+
+	.collapsible-2{
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+
+	.text{
+		padding: 0px;
+		font-size: 16px;
+	}
+
+	.text li {
+		font-size: 25px;
+	}
+
+	.collapsible-text-3{
+		overflow-x: auto;
+		max-width: 100%;
+	}
+
+	.section-kelas{
+		flex-direction: column;
+	}
+
+	.subSection-kelas{
+		width: 100%;
+	}
+
+	.kelas1{
+		width: 40%;
+	}
+
+	.kelas2{
+		width: 40%;
+	}
+
+	.kelas3{
+		width: 40%;
+	}
+
+	.kelas4{
+		width: 40%;
+	}
+}

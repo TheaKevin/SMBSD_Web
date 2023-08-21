@@ -38,6 +38,7 @@
         <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
         <link href="{{ asset('css/curhat.css') }}" rel="stylesheet">
         <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/about.css') }}" rel="stylesheet">
         {{-- <link href="{{ asset('storage/asset/IKukku.png') }}" rel="icon"> --}}
     </head>
     <body class="bg-light">
@@ -62,7 +63,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link" href="{{ route('aboutView') }}">About</a>
                         </li>
 
                         <li class="nav-item">

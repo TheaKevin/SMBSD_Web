@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SuperAdminController;
+use App\Http\Controllers\GuestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,8 @@ use App\Http\Controllers\SuperAdminController;
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
+
+Route::get('/about', [GuestController::class, 'aboutView'])->name('aboutView');
 
 Route::post('/login/load', [LoginController::class, 'authenticate'])->name('login');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
