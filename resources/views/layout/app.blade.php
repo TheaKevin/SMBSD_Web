@@ -39,6 +39,8 @@
         <link href="{{ asset('css/curhat.css') }}" rel="stylesheet">
         <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
         <link href="{{ asset('css/about.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/donation.css') }}" rel="stylesheet">
         {{-- <link href="{{ asset('storage/asset/IKukku.png') }}" rel="icon"> --}}
     </head>
     <body class="bg-light">
