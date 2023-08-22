@@ -10,4 +10,9 @@ class guestController extends Controller
     {
         return view('about');
     }
+
+    public function donationView()
+    {
+        return view('donation');
+    }
 }

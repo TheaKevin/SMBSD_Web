@@ -69,7 +69,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Donation</a>
+                            <a class="nav-link" href="{{ route('donationView') }}">Donation</a>
                         </li>
 
                         <li class="nav-item">

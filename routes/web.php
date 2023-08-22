@@ -23,6 +23,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/about', [GuestController::class, 'aboutView'])->name('aboutView');
+Route::get('/donation', [GuestController::class, 'donationView'])->name('donationView');
 
 Route::post('/login/load', [LoginController::class, 'authenticate'])->name('login');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');

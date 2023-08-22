@@ -1,0 +1,68 @@
+.b-example-divider {
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    width: 100vw;
+}
+
+.full-width {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.basisPembelajaranWrapper, .visiMisiWrapper{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.visiMisiWrapper{
+    justify-content: space-between;
+    height: 300px;
+}
+
+.visiItem, .misiItem{
+    width: 25%;
+}
+
+.basisPembelajaranWrapper{
+    justify-content: space-around;
+}
+
+.basisPembelajaranItem{
+    width: 50%;
+}
+
+@media (max-width: 991px) {
+    .basisPembelajaranWrapper, .visiMisiWrapper{
+        flex-direction: column;
+    }
+
+    .visiMisiWrapper{
+        height: auto;
+    }
+
+    .visiItem, .misiItem{
+        width: 75%;
+        text-align: justify;
+        margin-right: 1rem;
+        margin-left: 1rem;
+    }
+
+    .misiHeader{
+        text-align: right !important;
+    }
+
+    .basisPembelajaranItem{
+        width: 100%;
+        margin-top: 2rem;
+    }
+}

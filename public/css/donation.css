@@ -1,0 +1,63 @@
+.donationHeader{
+	display: grid;
+	margin: 10px auto;
+	padding: 15px 0;
+}
+.donationHeader h1{
+	text-align: center;
+	text-transform: uppercase;
+}
+.donationWrapper{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    justify-content: space-around;
+}
+.donationSubWrapper{
+	display: flex;
+	flex-direction: column;
+	padding-top: 30px;
+}
+.donationTextNorek{
+	max-height: 1px;
+	border-radius: 4px;
+	line-height: 1.4;
+}
+.donationTextNorek h2{
+	text-align: center !important;
+}
+.donationFooter{
+	margin: 20px auto;
+	padding-top: 40px;
+}
+.donationFooter .donationTextFooter{
+	text-align: center;
+	padding-top: 40px;
+}
+
+.donationItem{
+    width: 75%;
+}
+
+.donationImage{
+	width: 20%;
+}
+
+@media (max-width: 991px) {
+	.donationWrapper{
+        flex-direction: column;
+    }
+
+	.donationItem{
+        width: 100%;
+        margin-top: 2rem;
+		text-align: justify;
+    }
+
+	.donationImage{
+		max-width: 250px;
+		width: 100%;
+	}
+}
