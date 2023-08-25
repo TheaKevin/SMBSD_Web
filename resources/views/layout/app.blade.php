@@ -19,7 +19,7 @@
                 $(window).on('load', function() {
                     $('#loginModal').modal('show');
                 });
-            }else if(urlParams.has('role')){
+            }else if(urlParams.has('role') || urlParams.has('unauthorize')){
                 $(window).on('load', function() {
                     $('#noAccess').modal('show');
                 });
@@ -41,7 +41,6 @@
         <link href="{{ asset('css/about.css') }}" rel="stylesheet">
         <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
         <link href="{{ asset('css/donation.css') }}" rel="stylesheet">
-        {{-- <link href="{{ asset('storage/asset/IKukku.png') }}" rel="icon"> --}}
     </head>
     <body class="bg-light">
         <nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: #e3f2fd;" aria-label="Main navigation">
@@ -155,7 +154,7 @@
 
                                 <ul class="dropdown-menu" aria-labelledby="dropdown02">
                                     <li>
-                                        <a class="dropdown-item" href="#">Profile</a>
+                                        <a class="dropdown-item" href="{{ route('viewProfile', Auth::user()->id) }}">Profile</a>
                                     </li>
 
                                     <li>

@@ -44,3 +44,5 @@ Route::get('/addAdmin', [SuperAdminController::class, 'addAdminView'])->name('ad
 Route::post('/addAdmin/process', [SuperAdminController::class, 'addAdminProcess'])->name('addAdminProcess')->middleware('auth', 'superAdmin');
 Route::get('/deleteAdmin', [SuperAdminController::class, 'deleteAdminView'])->name('deleteAdminView')->middleware('auth', 'superAdmin');
 Route::post('/deleteAdmin/process', [SuperAdminController::class, 'deleteAdminProcess'])->name('deleteAdminProcess')->middleware('auth', 'superAdmin');
+
+Route::get('/profile/{id}', [UserController::class, 'viewProfile'])->name('viewProfile')->middleware('auth', 'parentOrUser');

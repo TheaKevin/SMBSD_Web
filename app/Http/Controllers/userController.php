@@ -8,6 +8,10 @@ use App\Models\UserDetail;
 
 class userController extends Controller
 {
-    
+    public function viewProfile($id)
+    {
+        $user = User::with(['userDetail', 'childProgress'])->findOrFail($id);
 
+        return view('viewProfile', compact('user'));
+    }
 }
