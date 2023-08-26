@@ -153,9 +153,12 @@
                                 <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-bs-toggle="dropdown" aria-expanded="false">{{ Auth::user()->fullName }}</a>
 
                                 <ul class="dropdown-menu" aria-labelledby="dropdown02">
-                                    <li>
-                                        <a class="dropdown-item" href="{{ route('viewProfile', Auth::user()->id) }}">Profile</a>
-                                    </li>
+                                    @if (Auth::user()->role == 'member')
+                                        <li>
+                                            <a class="dropdown-item" href="{{ route('viewProfile', Auth::user()->id) }}">Profile</a>
+                                        </li>
+                                    @elseif (Auth::user()->role == 'parent')
+                                    @endif
 
                                     <li>
                                         <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>

@@ -19,7 +19,7 @@
                         @foreach($user->childProgress as $progress)
                             <li>
                                 <a href="#" onclick="openProgressModal({{ $progress->id }});">
-                                    {{ date('M Y', strtotime($progress->createdDate)) }}
+                                    {{ date('M Y', strtotime($progress->created_at)) }}
                                 </a>
                             </li>
                         @endforeach
