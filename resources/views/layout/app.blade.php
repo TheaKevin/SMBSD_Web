@@ -158,6 +158,11 @@
                                             <a class="dropdown-item" href="{{ route('viewProfile', Auth::user()->id) }}">Profile</a>
                                         </li>
                                     @elseif (Auth::user()->role == 'parent')
+                                        @foreach(Auth::user()->children as $child)
+                                            <li>
+                                                <a class="dropdown-item" href="{{ route('viewProfile', $child->id) }}">{{ $child->fullName }}</a>
+                                            </li>
+                                        @endforeach
                                     @endif
 
                                     <li>
