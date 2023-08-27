@@ -3,33 +3,47 @@
 @section('content')
     <div class="row">
         <div class="col-md-8 offset-md-2">
-            <div class="card">
-                <div class="card-header">
-                    {{ $user->fullName }}'s Profile
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="mb-0">{{ $user->fullName }}</h2>
+
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            @if($user->userDetail)
+                                <p class="mb-1">{{ $user->userDetail->nickname }}</p>
+                                <p class="mb-1">{{ $user->userDetail->gender }}, {{ $user->userDetail->calculateAge() }} tahun</p>
+                            @endif
+                        </div>
+
+                        <div>
+                            @if($user->userDetail)
+                                <p class="mb-1">Kelas: {{ $user->userDetail->classSMBSD }}</p>
+                                <p class="mb-1">Point: {{ $user->userDetail->point }}</p>
+                            @endif
+                        </div>
+                    </div>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">Personal Information</h5>
-                    <p>Email: {{ $user->email }}</p>
-                    @if($user->userDetail)
-                        <p>Gender: {{ $user->userDetail->gender }}</p>
-                        {{-- Display other user detail fields here --}}
-                    @endif
-                    <h5 class="card-title">Child Progress</h5>
-                    <ul>
-                        @foreach($user->childProgress as $progress)
-                            <li>
-                                <a href="#" onclick="openProgressModal({{ $progress->id }});">
+                    <h5 class="card-title">Perkembangan Murid</h5>
+                    @foreach($childProgress as $progress)
+                        <div class="card mb-3">
+                            <a href="#"
+                            onclick="openProgressModal({{ $progress->id }});"
+                            class="card-body text-decoration-none"
+                            style="color: black;">
+                                <div class="card-text">
                                     {{ date('M Y', strtotime($progress->created_at)) }}
-                                </a>
-                            </li>
-                        @endforeach
-                    </ul>
+                                </div>
+                            </a>
+                        </div>
+                    @endforeach
+                    {{ $childProgress->links() }}
                 </div>
             </div>
         </div>
     </div>
 
-    @foreach($user->childProgress as $progress)
+    @foreach($childProgress as $progress)
         @include('partials.childProgressModal', ['progress' => $progress])
     @endforeach
 @endsection

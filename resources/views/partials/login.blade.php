@@ -4,7 +4,7 @@
 
             <div class="modal-header">
                 <h4 class="modal-title" id="loginModal">{{ __('Login') }}</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
             <div class="modal-body">
@@ -41,7 +41,7 @@
                             name="remember"
                             id="remember"
                             {{ old('remember') ? 'checked' : '' }}>
-                        <label class="mb-3" for="remember">Remember me?</label>
+                        <label class="mb-3" for="remember">Ingat saya?</label>
 
                         <button
                             class="btn btn-lg btn-primary mb-3"

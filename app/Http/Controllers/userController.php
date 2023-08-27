@@ -10,8 +10,10 @@ class userController extends Controller
 {
     public function viewProfile($id)
     {
-        $user = User::with(['userDetail', 'childProgress'])->findOrFail($id);
+        $user = User::with(['userDetail'])->findOrFail($id);
+        
+        $childProgress = $user->childProgress()->paginate(10);
 
-        return view('viewProfile', compact('user'));
+        return view('viewProfile', compact('user', 'childProgress'));
     }
 }
