@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Post;
+
 class guestController extends Controller
 {
     public function aboutView()
@@ -14,5 +16,12 @@ class guestController extends Controller
     public function donationView()
     {
         return view('donation');
+    }
+
+    public function home()
+    {
+        $post = Post::latest()->first(); // Retrieve the newest post
+
+        return view('welcome',compact ('post'));
     }
 }

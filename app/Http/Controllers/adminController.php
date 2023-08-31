@@ -4,10 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
+
 use App\Models\User;
 use App\Models\UserDetail;
 use App\Models\Absent;
 use App\Models\ChildProgress;
+use App\Models\Post;
 
 class adminController extends Controller
 {
@@ -133,5 +137,31 @@ class adminController extends Controller
         session()->flash('error', 'Tidak ada user yang dipilih.');
 
         return redirect()->route('absentView');
+    }
+
+    public function addActivityView()
+    {
+        return view('addActivity');
+    }
+
+    public function addActivityProcess(Request $request)
+    {
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'caption' => 'required|string|max:255',
+        ]);
+
+        $imagePath = $request->file('image')->store('post_images', 'public');
+
+        $post = new Post([
+            'postImage' => $imagePath,
+            'postDesc' => $request->input('caption'),
+        ]);
+
+        $post->save();
+
+        session()->flash('success', 'Data absen berhasil disimpan.');
+
+        return redirect()->route('addActivityView');
     }
 }

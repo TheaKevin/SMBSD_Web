@@ -16,6 +16,22 @@
 
     <div class="b-example-divider full-width"></div>
 
+    @if($post)
+        <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-6">
+                    <img src="{{ asset('storage/' . $post->postImage) }}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="700" loading="lazy">
+                </div>
+                <div class="col-lg-6">
+                    <h1 class="display-5 fw-bold lh-1 mb-3">Activity Terbaru</h1>
+                    <p class="lead">{{ $post->postDesc }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="b-example-divider full-width"></div>
+    @endif
+
     <div class="visiMisiWrapper">
         <div class="align-self-start visiItem">
             <h1 class="display-5 fw-bold lh-1 mb-3">

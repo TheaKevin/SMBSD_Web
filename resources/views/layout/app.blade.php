@@ -120,7 +120,7 @@
                                         </li>
 
                                         <li>
-                                            <a class="dropdown-item" href="#">Update Kegiatan</a>
+                                            <a class="dropdown-item" href="{{ route('addActivityView') }}">Update Kegiatan</a>
                                         </li>
 
                                         @if((Auth::user()->role == 'super admin'))

@@ -18,9 +18,7 @@ use App\Http\Controllers\GuestController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', [GuestController::class, 'home'])->name('home');
 
 Route::get('/about', [GuestController::class, 'aboutView'])->name('aboutView');
 Route::get('/donation', [GuestController::class, 'donationView'])->name('donationView');
@@ -39,6 +37,9 @@ Route::post('/updateProgress/process', [AdminController::class, 'updateProgressP
 
 Route::get('/absent', [AdminController::class, 'absentView'])->name('absentView')->middleware('auth', 'admin');
 Route::post('/absent/process', [AdminController::class, 'absentProcess'])->name('absentProcess')->middleware('auth', 'admin');
+
+Route::get('/addActivity', [AdminController::class, 'addActivityView'])->name('addActivityView')->middleware('auth', 'admin');
+Route::post('/addActivity/process', [AdminController::class, 'addActivityProcess'])->name('addActivityProcess')->middleware('auth', 'admin');
 
 Route::get('/addAdmin', [SuperAdminController::class, 'addAdminView'])->name('addAdminView')->middleware('auth', 'superAdmin');
 Route::post('/addAdmin/process', [SuperAdminController::class, 'addAdminProcess'])->name('addAdminProcess')->middleware('auth', 'superAdmin');
