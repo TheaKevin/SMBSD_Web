@@ -41,9 +41,13 @@ Route::post('/absent/process', [AdminController::class, 'absentProcess'])->name(
 Route::get('/addActivity', [AdminController::class, 'addActivityView'])->name('addActivityView')->middleware('auth', 'admin');
 Route::post('/addActivity/process', [AdminController::class, 'addActivityProcess'])->name('addActivityProcess')->middleware('auth', 'admin');
 
+Route::get('/addPointExchangeItem', [AdminController::class, 'addPointExchangeItemView'])->name('addPointExchangeItemView')->middleware('auth', 'admin');
+Route::post('/addPointExchangeItem/process', [AdminController::class, 'addPointExchangeItemProcess'])->name('addPointExchangeItemProcess')->middleware('auth', 'admin');
+
 Route::get('/addAdmin', [SuperAdminController::class, 'addAdminView'])->name('addAdminView')->middleware('auth', 'superAdmin');
 Route::post('/addAdmin/process', [SuperAdminController::class, 'addAdminProcess'])->name('addAdminProcess')->middleware('auth', 'superAdmin');
 Route::get('/deleteAdmin', [SuperAdminController::class, 'deleteAdminView'])->name('deleteAdminView')->middleware('auth', 'superAdmin');
 Route::post('/deleteAdmin/process', [SuperAdminController::class, 'deleteAdminProcess'])->name('deleteAdminProcess')->middleware('auth', 'superAdmin');
 
 Route::get('/profile/{id}', [UserController::class, 'viewProfile'])->name('viewProfile')->middleware('auth', 'parentOrUser');
+Route::get('/tukarPoint', [UserController::class, 'pointExchangeView'])->name('pointExchangeView')->middleware('auth');

@@ -12,6 +12,7 @@ use App\Models\UserDetail;
 use App\Models\Absent;
 use App\Models\ChildProgress;
 use App\Models\Post;
+use App\Models\Present;
 
 class adminController extends Controller
 {
@@ -163,5 +164,33 @@ class adminController extends Controller
         session()->flash('success', 'Data absen berhasil disimpan.');
 
         return redirect()->route('addActivityView');
+    }
+
+    public function addPointExchangeItemView()
+    {
+        return view('addPointExchange');
+    }
+
+    public function addPointExchangeItemProcess(Request $request)
+    {
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'name' => 'required|string|max:255',
+            'point' => 'required|integer|min:1',
+        ]);
+
+        $imagePath = $request->file('image')->store('point_exchange_images', 'public');
+
+        $pointExchange = new Present([
+            'presentImage' => $imagePath,
+            'presentName' => $request->input('name'),
+            'presentPoints' => $request->input('point'),
+        ]);
+
+        $pointExchange->save();
+
+        session()->flash('success', 'Data absen berhasil disimpan.');
+
+        return redirect()->route('addPointExchangeItemView');
     }
 }

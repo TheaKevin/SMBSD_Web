@@ -78,19 +78,11 @@
                         @auth
                             @if (Auth::user()->role == 'member')
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">More</a>
+                                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Lainnya</a>
         
                                     <ul class="dropdown-menu" aria-labelledby="dropdown01">
                                         <li>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                        </li>
-        
-                                        <li>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                        </li>
-        
-                                        <li>
-                                            <a class="dropdown-item" href="#">Something else here</a>
+                                            <a class="dropdown-item" href="{{ route('pointExchangeView') }}">Penukaran Point</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -112,7 +104,7 @@
                                         </li>
         
                                         <li>
-                                            <a class="dropdown-item" href="#">Tambah Etalase Hadiah</a>
+                                            <a class="dropdown-item" href="{{ route('addPointExchangeItemView') }}">Tambah Item Penukaran Point</a>
                                         </li>
 
                                         <li>

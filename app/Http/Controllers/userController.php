@@ -16,4 +16,9 @@ class userController extends Controller
 
         return view('viewProfile', compact('user', 'childProgress'));
     }
+
+    public function pointExchangeView()
+    {
+        return view('pointExchange');
+    }
 }
