@@ -9,9 +9,14 @@
             </div>
             <div class="modal-body">
                 <div>
+                    <h6>Ringkasan Perkembangan Siswa:</h6>
                     {{ $progress->childProgressSummary }}
                 </div>
+
+                <br>
+
                 <div>
+                    <h6>Hal Yang Dipelajari Siswa:</h6>
                     {{ $progress->childProgressLearned }}
                 </div>
                 {{-- Display other child progress details here --}}

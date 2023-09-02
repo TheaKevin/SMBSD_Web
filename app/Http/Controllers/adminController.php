@@ -175,7 +175,7 @@ class adminController extends Controller
     {
         $request->validate([
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|max:15',
             'point' => 'required|integer|min:1',
         ]);
 

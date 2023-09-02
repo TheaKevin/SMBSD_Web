@@ -15,12 +15,12 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'fullName' => 'Admin User',
-        //     'loginID' => '1234567890',
-        //     'password' => Hash::make('thea1234'),
-        //     'role' => 'admin'
-        // ]);
+        \App\Models\User::factory()->create([
+            'fullName' => 'Admin User',
+            'loginID' => '1234567890',
+            'password' => Hash::make('thea1234'),
+            'role' => 'admin'
+        ]);
 
         \App\Models\User::factory()->create([
             'fullName' => 'Super Admin User',
@@ -30,9 +30,9 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // \App\Models\User::factory()->create([
-        //     'fullName' => 'Member User',
-        //     'loginID' => '0987654321',
-        //     'password' => Hash::make('thea1234'),
+        //     'fullName' => 'Garlan Wijaya',
+        //     'loginID' => '1234567890',
+        //     'password' => Hash::make('1234567890'),
         // ]);
     }
 }

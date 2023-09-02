@@ -41,6 +41,7 @@
         <link href="{{ asset('css/about.css') }}" rel="stylesheet">
         <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
         <link href="{{ asset('css/donation.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/pointExchange.css') }}" rel="stylesheet">
     </head>
     <body class="bg-light">
         <nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: #e3f2fd;" aria-label="Main navigation">
