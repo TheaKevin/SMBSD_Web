@@ -157,6 +157,14 @@
                                             </li>
                                         @endforeach
                                     @endif
+                                    <hr>
+
+                                    <li>
+                                        <a class="dropdown-item"
+                                            style="cursor: pointer"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#gantiPassword">Ganti Password</a>
+                                    </li>
 
                                     <li>
                                         <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
@@ -230,4 +238,5 @@
     {{-- @include('partials.register') --}}
 @else
     @include('partials.noAccess')
+    @include('partials.changePassword')
 @endguest

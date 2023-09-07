@@ -25,6 +25,7 @@ Route::get('/donation', [GuestController::class, 'donationView'])->name('donatio
 
 Route::post('/login/load', [LoginController::class, 'authenticate'])->name('login');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
+Route::post('/GantiPassword/Load', [LoginController::class, 'gantiPassword'])->name('gantiPassword')->middleware('auth');
 
 Route::get('/addUser', [AdminController::class, 'addUserView'])->name('addUserView')->middleware('auth', 'admin');
 Route::post('/addUser/process', [AdminController::class, 'addUserProcess'])->name('addUserProcess')->middleware('auth', 'admin');
