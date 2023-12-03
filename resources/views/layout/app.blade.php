@@ -60,9 +60,9 @@
                             <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
                         </li>
 
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link" href="#">Aktifitas</a>
-                        </li>
+                        </li> --}}
 
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('aboutView') }}">Tentang</a>
@@ -72,9 +72,9 @@
                             <a class="nav-link" href="{{ route('donationView') }}">Donasi</a>
                         </li>
 
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link" href="#">Galeri</a>
-                        </li>
+                        </li> --}}
 
                         @auth
                             @if (Auth::user()->role == 'member')
