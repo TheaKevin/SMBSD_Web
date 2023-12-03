@@ -17,15 +17,15 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\User::factory()->create([
             'fullName' => 'Admin User',
-            'loginID' => '1234567890',
-            'password' => Hash::make('thea1234'),
+            'loginID' => 'adminProd',
+            'password' => Hash::make('SmbSuvannaDipaAdmin123!'),
             'role' => 'admin'
         ]);
 
         \App\Models\User::factory()->create([
             'fullName' => 'Super Admin User',
-            'loginID' => 'thea1234',
-            'password' => Hash::make('thea1234'),
+            'loginID' => 'superAdminProd',
+            'password' => Hash::make('SmbSuvannaDipaSuperAdmin123!'),
             'role' => 'super admin'
         ]);
 
