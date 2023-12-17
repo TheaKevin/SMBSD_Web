@@ -49,3 +49,4 @@ templates/
 themes/
 url.php
 yarn.lock
+.htaccess
