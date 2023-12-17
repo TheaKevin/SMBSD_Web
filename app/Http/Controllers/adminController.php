@@ -14,7 +14,7 @@ use App\Models\ChildProgress;
 use App\Models\Post;
 use App\Models\Present;
 
-class adminController extends Controller
+class AdminController extends Controller
 {
     public function addUserView()
     {

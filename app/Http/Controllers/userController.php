@@ -7,7 +7,7 @@ use App\Models\User;
 use App\Models\UserDetail;
 use App\Models\Present;
 
-class userController extends Controller
+class UserController extends Controller
 {
     public function viewProfile($id)
     {

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\UserDetail;
 
-class superAdminController extends Controller
+class SuperAdminController extends Controller
 {
 
     public function addAdminView()
