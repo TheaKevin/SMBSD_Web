@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Post;
 
-class guestController extends Controller
+class GuestController extends Controller
 {
     public function aboutView()
     {
