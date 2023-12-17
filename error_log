@@ -1,0 +1,24 @@
+[17-Dec-2023 12:50:34 UTC] PHP Warning:  require(/home/smbsuvan/public_html/vendor/autoload.php): Failed to open stream: No such file or directory in /home/smbsuvan/public_html/artisan on line 18
+[17-Dec-2023 12:50:34 UTC] PHP Warning:  require(/home/smbsuvan/public_html/vendor/autoload.php): Failed to open stream: No such file or directory in /home/smbsuvan/public_html/artisan on line 18
+[17-Dec-2023 12:50:34 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/smbsuvan/public_html/vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/smbsuvan/public_html/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/smbsuvan/public_html/artisan on line 18
+[17-Dec-2023 12:50:51 UTC] PHP Warning:  require(/home/smbsuvan/public_html/vendor/autoload.php): Failed to open stream: No such file or directory in /home/smbsuvan/public_html/artisan on line 18
+[17-Dec-2023 12:50:51 UTC] PHP Warning:  require(/home/smbsuvan/public_html/vendor/autoload.php): Failed to open stream: No such file or directory in /home/smbsuvan/public_html/artisan on line 18
+[17-Dec-2023 12:50:51 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/smbsuvan/public_html/vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/smbsuvan/public_html/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/smbsuvan/public_html/artisan on line 18
+[17-Dec-2023 12:55:49 UTC] PHP Warning:  require(/home/smbsuvan/public_html/vendor/autoload.php): Failed to open stream: No such file or directory in /home/smbsuvan/public_html/artisan on line 18
+[17-Dec-2023 12:55:49 UTC] PHP Warning:  require(/home/smbsuvan/public_html/vendor/autoload.php): Failed to open stream: No such file or directory in /home/smbsuvan/public_html/artisan on line 18
+[17-Dec-2023 12:55:49 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/smbsuvan/public_html/vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/smbsuvan/public_html/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/smbsuvan/public_html/artisan on line 18
+[17-Dec-2023 13:01:46 UTC] PHP Warning:  require(/home/smbsuvan/public_html/vendor/autoload.php): Failed to open stream: No such file or directory in /home/smbsuvan/public_html/artisan on line 18
+[17-Dec-2023 13:01:46 UTC] PHP Warning:  require(/home/smbsuvan/public_html/vendor/autoload.php): Failed to open stream: No such file or directory in /home/smbsuvan/public_html/artisan on line 18
+[17-Dec-2023 13:01:46 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/smbsuvan/public_html/vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/smbsuvan/public_html/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/smbsuvan/public_html/artisan on line 18
