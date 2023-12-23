@@ -7,7 +7,7 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title style="">Curhatku</title>
+        <title style="">SMB Suvanna Dipa</title>
 
         <!-- Scripts -->
 
