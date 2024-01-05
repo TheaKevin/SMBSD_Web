@@ -53,17 +53,17 @@ class User extends Authenticatable
 
     public function userDetail()
     {
-        return $this->hasOne(userDetail::class);
+        return $this->hasOne(UserDetail::class);
     }
 
     public function absent()
     {
-        return $this->hasMany(absent::class);
+        return $this->hasMany(Absent::class);
     }
 
     public function childProgress()
     {
-        return $this->hasMany(childProgress::class);
+        return $this->hasMany(hildProgress::class);
     }
 
     public function parent()
